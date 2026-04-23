@@ -8,7 +8,7 @@ This project uses the Cloudflare Agents SDK, Workers AI, and Durable Object-back
 
 ## 🚀 Overview
 
-cf_ai_edgeguard is designed to simulate how developers and platform engineers can use AI directly at the edge to interpret request traffic and take action faster.
+cf_ai_edgeguard simulates how developers can use AI directly at the edge to interpret request traffic and take action faster.
 
 The agent:
 - analyzes structured request logs
@@ -28,6 +28,8 @@ This project explores how AI can:
 - reduce time-to-diagnosis for issues
 - assist developers in making real-time decisions at the edge
 
+This aligns with Cloudflare’s mission to build a faster, more secure Internet.
+
 ---
 
 ## ⚙️ Architecture
@@ -43,7 +45,7 @@ This project explores how AI can:
 ## ✨ Features
 
 - 💬 Chat-based traffic analysis
-- 🧠 Session memory for flagged IPs and incidents
+- 🧠 Session memory for flagged IPs and prior incidents
 - 🔍 Detection of suspicious login activity
 - ⚡ Identification of slow endpoints
 - 🛠️ Actionable recommendations:
@@ -65,7 +67,7 @@ Try these in the UI:
 
 ---
 
-## 📊 Example output behavior
+## 📊 Example behavior
 
 The agent will:
 
@@ -79,3 +81,59 @@ The agent will:
 ---
 
 ## 🧩 Project structure
+
+src/
+server.ts       # EdgeGuard AI agent (core logic)
+sampleLogs.ts   # Simulated request logs
+types.ts        # Type definitions
+app.tsx         # Chat UI
+client.tsx      # React entry
+styles.css      # Styling
+
+
+---
+## 🧪 How to test the application
+
+Use the chat interface and try the following prompts:
+
+- Analyze the current request logs  
+
+- Which IPs look suspicious?  
+
+- Why is latency high?  
+
+- What should I block or rate limit?  
+
+### Expected behavior
+
+The agent should:
+
+- Flag `192.0.2.10` due to repeated failed login attempts  
+
+- Identify `/api/search` as a high-latency endpoint  
+
+- Recommend actionable mitigations such as:
+
+  - rate limiting authentication endpoints  
+
+  - applying firewall rules to suspicious IPs  
+
+  - investigating caching or backend performance improvements
+ 
+  
+## 🏃 Running locally
+
+### Prerequisites
+- Node.js v20+
+- npm
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/<your-username>/cf_ai_edgeguard.git
+cd cf_ai_edgeguard
+
+npm install
+
+npm run dev
+
+http://localhost:5173
