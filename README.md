@@ -166,13 +166,20 @@ The agent should:
 ```bash
 git clone https://github.com/<your-username>/cf_ai_edgeguard.git
 cd cf_ai_edgeguard
+```
 
-Install dependencies
+### 2. Install dependencies
+```bash
 npm install
+```
 
-Start development server
+### 3. Start development server
+```bash
 npm run dev
+```
 
-Open in browser
+
+### 4.Open in browser
+```bash
 http://localhost:5173
-
+```
